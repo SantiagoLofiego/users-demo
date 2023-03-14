@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @ControllerAdvice
@@ -18,14 +19,14 @@ public class AppExceptionHandler  {
 
     @ExceptionHandler(EmailAlreadyRegistered.class)
     public ResponseEntity<Object> handleEmailAlreadyRegistered(EmailAlreadyRegistered ex) {
-        ErrorResponse error = new ErrorResponse(Arrays.asList(ex.getMessage()));
+        ErrorResponse error = new ErrorResponse(Collections.singletonList(ex.getMessage()));
         return new ResponseEntity<>(error, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<Object> handleDataIntegrityViolationException(DataIntegrityViolationException ex) {
         System.out.println(ex);
-        ErrorResponse error = new ErrorResponse(Arrays.asList(ex.getMessage()));
+        ErrorResponse error = new ErrorResponse(Collections.singletonList(ex.getMessage()));
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 
