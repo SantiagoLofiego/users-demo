@@ -3,17 +3,17 @@ package com.tsoft.usersdemo.exceptions;
 import java.util.List;
 
 public class ErrorResponse {
-    private List<String> message;
+    private String message;
 
-    public ErrorResponse(List<String> message) {
+    public ErrorResponse(String message) {
         this.message = message;
     }
 
-    public List getMessage() {
+    public String getMessage() {
         return message;
     }
 
-    public void setMessage(List<String> message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 

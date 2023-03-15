@@ -15,7 +15,7 @@ public class CreateUserDto {
     private String name;
     @NotNull(message = "Password required")
     @Pattern(regexp = "(^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d.*\\d)[a-zA-Z\\d/@$!%*?&]{8,}$)"
-            , message = "The password must contain at least one uppercase one lowercase letter and two numbers ")
+            , message = "The password must contain at least one uppercase one lowercase letter and two numbers")
     private String password;
     @NotEmpty
     @Pattern(regexp = "^[a-z]{3,}@[a-z]{3,}(\\.[a-z]{2,4})+$"
